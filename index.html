@@ -1,15 +1,357 @@
 <!DOCTYPE html>
-        <p>
-          برای خرید کتاب، یکی از گزینه‌های زیر را انتخاب کنید.
-        </p>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>عباس بهزادی | کتاب‌ها</title>
+  <meta name="description" content="صفحه رسمی کتاب‌های عباس بهزادی؛ معرفی، بخشی از متن و لینک خرید مستقیم از Publit." />
+  <style>
+    :root {
+      --bg: #f7f3ec;
+      --paper: #fffaf2;
+      --text: #241f1a;
+      --muted: #6b6258;
+      --accent: #7a3e2c;
+      --accent-dark: #5c2d20;
+      --border: #e0d3c3;
+    }
 
-        <div class="buttons" style="justify-content: center; margin-top: 18px;">
-          <a class="button primary" href="https://webshop.publit.com/webshop/3778/9789177734871/bar-man-chonin-gozasht" target="_blank" rel="noopener">خرید نسخه چاپی «بر من چنین گذشت»</a>
-          <a class="button secondary" href="https://webshop.publit.com/webshop/6101/9789181116625" target="_blank" rel="noopener">خرید نسخه الکترونیکی / EPUB «خاطرات یک تبعیدی»</a>
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: Tahoma, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.9;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    .page {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 24px;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      padding: 18px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .brand {
+      font-weight: 700;
+      font-size: 20px;
+    }
+
+    nav {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+      font-size: 15px;
+      color: var(--muted);
+    }
+
+    nav a {
+      text-decoration: none;
+    }
+
+    nav a:hover {
+      color: var(--accent);
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 1fr 1.35fr;
+      gap: 36px;
+      align-items: center;
+      padding: 56px 0 40px;
+    }
+
+    .cover {
+      background: var(--paper);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      min-height: 430px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 22px;
+      box-shadow: 0 14px 35px rgba(0,0,0,.08);
+      text-align: center;
+    }
+
+    .book-cover {
+      max-width: 100%;
+      max-height: 620px;
+      border-radius: 12px;
+      box-shadow: 0 10px 28px rgba(0,0,0,.16);
+      display: block;
+    }
+
+    h1 {
+      font-size: clamp(36px, 6vw, 68px);
+      line-height: 1.25;
+      margin: 0 0 16px;
+      color: var(--accent-dark);
+    }
+
+    .subtitle {
+      font-size: 22px;
+      color: var(--muted);
+      margin-bottom: 26px;
+    }
+
+    .intro {
+      font-size: 18px;
+      margin-bottom: 30px;
+      white-space: pre-line;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 13px 22px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: 700;
+      border: 1px solid var(--accent);
+    }
+
+    .button.primary {
+      background: var(--accent);
+      color: white;
+    }
+
+    .button.primary:hover {
+      background: var(--accent-dark);
+    }
+
+    .button.secondary {
+      color: var(--accent);
+      background: transparent;
+    }
+
+    section {
+      background: var(--paper);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 28px;
+      margin: 24px 0;
+      box-shadow: 0 8px 22px rgba(0,0,0,.04);
+    }
+
+    h2 {
+      margin-top: 0;
+      color: var(--accent-dark);
+      font-size: 28px;
+    }
+
+    h3 {
+      margin: 0 0 8px;
+      color: var(--accent-dark);
+      font-size: 22px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-top: 18px;
+    }
+
+    .card {
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 18px;
+      background: #fffdf8;
+    }
+
+    .book-list {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+      margin-top: 18px;
+    }
+
+    .book-card {
+      display: grid;
+      grid-template-columns: 125px 1fr;
+      gap: 18px;
+      align-items: center;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 18px;
+      background: #fffdf8;
+      text-align: right;
+    }
+
+    .book-card p {
+      margin: 0 0 14px;
+      color: var(--muted);
+    }
+
+    .book-thumb {
+      width: 100%;
+      max-width: 125px;
+      border-radius: 10px;
+      box-shadow: 0 8px 20px rgba(0,0,0,.14);
+      display: block;
+    }
+
+    .cover-placeholder {
+      border: 2px dashed var(--border);
+      border-radius: 12px;
+      padding: 28px 14px;
+      color: var(--muted);
+      text-align: center;
+      min-height: 150px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .quote {
+      font-size: 18px;
+      color: var(--muted);
+      border-right: 4px solid var(--accent);
+      padding-right: 18px;
+    }
+
+    .buy-box {
+      text-align: center;
+      background: #fffdf8;
+    }
+
+    footer {
+      color: var(--muted);
+      text-align: center;
+      padding: 32px 0 12px;
+      font-size: 14px;
+    }
+
+    @media (max-width: 800px) {
+      .hero, .grid, .book-list {
+        grid-template-columns: 1fr;
+      }
+
+      header {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .cover {
+        min-height: 280px;
+      }
+
+      .book-card {
+        grid-template-columns: 95px 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header>
+      <div class="brand">عباس بهزادی</div>
+      <nav>
+        <a href="#books">کتاب‌ها</a>
+        <a href="#about">درباره کتاب</a>
+        <a href="#excerpt">بخشی از کتاب</a>
+        <a href="#more-books">کتاب‌های دیگر</a>
+        <a href="#author">درباره نویسنده</a>
+        <a href="#contact">تماس</a>
+      </nav>
+    </header>
+
+    <main>
+      <div class="hero">
+        <div class="cover">
+          <img class="book-cover" src="cover.jpg" alt="جلد کتاب بر من چنین گذشت، نوشته عباس بهزادی" />
         </div>
 
-        <p style="margin-top: 24px; color: var(--muted);">
-          نسخه چاپی کتاب با عنوان «بر من چنین گذشت» و نسخه الکترونیکی / EPUB با عنوان «خاطرات یک تبعیدی» از طریق Publit قابل تهیه است.
+        <div>
+          <h1>بر من چنین گذشت</h1>
+          <div class="subtitle">نویسنده: عباس بهزادی</div>
+          <p class="intro">«بر من چنین گذشت» روایت زندگی مردی است که از زندان‌های دهه‌ی شصت جمهوری اسلامی تا تبعید، پناهجویی و بلاتکلیفی در اروپا پیش رفت.
+او از ایران گریخت، در پاکستان و هلند سال‌های سختی را گذراند و سرانجام در سوئد پناهندگی سیاسی گرفت.
+اما زندگی تازه نیز برای او به آرامش نرسید؛ بحران‌های خانوادگی، فشارهای روانی و حادثه‌ای تراژیک مسیر زندگی‌اش را برای همیشه تغییر داد.
+این کتاب روایتی تلخ و صریح از تبعید، فروپاشی، گناه، مجازات و زندگی در حاشیه‌ی قانون و جامعه است.</p>
+          <div class="buttons">
+            <a class="button primary" href="https://webshop.publit.com/webshop/3778/9789177734871/bar-man-chonin-gozasht" target="_blank" rel="noopener">خرید نسخه چاپی</a>
+            <a class="button secondary" href="#books">دیدن نسخه‌ها</a>
+          </div>
+        </div>
+      </div>
+
+      <section id="books">
+        <h2>کتاب‌ها</h2>
+        <p>
+          اینجا دو نسخه / عنوان موجود از این اثر را می‌توانید ببینید و تهیه کنید.
+        </p>
+        <div class="book-list">
+          <div class="book-card">
+            <img class="book-thumb" src="cover.jpg" alt="جلد کتاب بر من چنین گذشت" />
+            <div>
+              <h3>بر من چنین گذشت</h3>
+              <p>نسخه چاپی کتاب، نوشته عباس بهزادی.</p>
+              <a class="button primary" href="https://webshop.publit.com/webshop/3778/9789177734871/bar-man-chonin-gozasht" target="_blank" rel="noopener">خرید نسخه چاپی</a>
+            </div>
+          </div>
+
+          <div class="book-card">
+            <img class="book-thumb" src="ebook-cover.jpg" alt="جلد کتاب الکترونیکی خاطرات یک تبعیدی" />
+            <div>
+              <h3>خاطرات یک تبعیدی</h3>
+              <p>نسخه الکترونیکی / EPUB همین اثر، نوشته عباس بهزادی.</p>
+              <a class="button secondary" href="https://webshop.publit.com/webshop/6101/9789181116625" target="_blank" rel="noopener">خرید نسخه الکترونیکی / EPUB</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="about">
+        <h2>درباره کتاب</h2>
+        <p>
+          این کتاب درباره‌ی زندگی یک تبعیدی است که پس از تجربه‌ی زندان‌های دهه‌ی شصت جمهوری اسلامی، ناچار به ترک ایران شد. او نخست به پاکستان گریخت و پس از تولد نخستین فرزندش به هلند پناه برد؛ جایی که سه سال دشوار را با پاسخ‌های منفی، مشکلات مالی، تنهایی و برخورد با فرهنگی ناآشنا گذراند. پس از ناامیدی از روند پناهندگی در هلند، راهی سوئد شد و در مدت کوتاهی پناهندگی سیاسی گرفت.
+        </p>
+        <p>
+          در سوئد، او کوشید زندگی تازه‌ای بسازد: به مدرسه‌ی آشپزی رفت، مدرک گرفت و هم‌زمان فعالیت‌های سیاسی خود را ادامه داد. اما زندگی خانوادگی‌اش در پی مجموعه‌ای از بحران‌ها و دخالت‌هایی که او آن‌ها را نقشه‌ای پیچیده از سوی دو برادر پناهنده‌نما می‌داند، فرو پاشید. این فروپاشی او را به بحران‌های شدید روحی و روانی کشاند و سرانجام به حادثه‌ای تراژیک انجامید: قتل مادر فرزندانش، محکومیت به زندانی طولانی و حکم اخراج دائم از سوئد.
+        </p>
+        <p>
+          با این حال، به دلیل نداشتن گذرنامه یا مدارک هویتی ایرانی، اجرای حکم اخراج ممکن نشد. او اکنون بیش از دو دهه است که در سوئد در وضعیت بلاتکلیف زندگی می‌کند؛ بی‌آنکه امکان عادی کار و فعالیت داشته باشد. «بر من چنین گذشت» تلاشی است برای بازگویی این مسیر دشوار، با همه‌ی زخم‌ها، خطاها، رنج‌ها و پیامدهای انسانی آن.
+        </p>
+
+        <div class="grid">
+          <div class="card"><strong>زبان:</strong><br />فارسی</div>
+          <div class="card"><strong>موضوع:</strong><br />تبعید، پناهندگی و سرگذشت فردی</div>
+          <div class="card"><strong>خرید:</strong><br />ارسال از طریق Publit</div>
+        </div>
+      </section>
+
+      <section id="excerpt">
+        <h2>بخشی از کتاب</h2>
+        <p class="quote">
+          تا آن زمان، حکم اخراج را از خودآگاه خود رانده و در گوشه‌ای از ناخودآگاه پنهان کرده بودم تا از شدت احساس کشنده‌ی آن بکاهـم. اما اکنون که در بازداشتگاه به سر می‌بردم، هر لحظه به اخراج فکر می‌کردم. یاد زندان‌های جمهوری اسلامی و پاسداران در ذهنم زنده می‌شد و در روحم غوغایی برمی‌خاست.
+          <br><br>
+          حالم چنان خراب شده بود که مأموران بازداشتگاه نگران سلامتی‌ام شدند. گمان می‌کردند ممکن است خودکشی کنم؛ برای همین حتی برس توالت سلول را هم برداشته بودند. شبانه‌روز از پنجره‌ی کوچک روی درِ سلول مرا زیر نظر داشتند و هر چند دقیقه یک بار به داخل نگاه می‌کردند. داروهای اعصابم را نیز به میزان قابل توجهی افزایش داده بودند.
         </p>
       </section>
 
@@ -21,9 +363,7 @@
 
         <div class="book-list">
           <div class="book-card">
-            <div class="cover-placeholder" style="min-height: 160px; display: flex; align-items: center; justify-content: center;">
-              جلد کتاب بعدی
-            </div>
+            <div class="cover-placeholder">جلد کتاب بعدی</div>
             <div>
               <h3>عنوان کتاب بعدی</h3>
               <p>در اینجا معرفی کوتاه کتاب بعدی نوشته می‌شود.</p>
@@ -37,14 +377,21 @@
         <h2>درباره نویسنده</h2>
         <p>
           عباس بهزادی در سال ۱۳۴۱ خورشیدی، برابر با ۱۹۶۲ میلادی، در ایرانشهرِ استان سیستان و بلوچستان متولد شد. او در روزهای پیروزی انقلاب ایران حدود هفده سال داشت؛ انقلابی که با امید رهایی از استبداد سلطنتی آغاز شد، اما به‌زودی جای خود را به استبدادی دینی و خشن‌تر داد. بهزادی نیز، مانند بسیاری از جوانان آن دوره، در برابر این وضعیت سکوت نکرد و به صف مخالفان حکومت تازه‌استقرار یافته پیوست.
-
-او نخستین بار در سال ۱۳۵۹، زمانی که هنوز دانش‌آموز دبیرستانی بود، بازداشت شد و شش ماه را در تبعید در شهر جهرمِ استان فارس گذراند. پس از بازگشت از تبعید، بار دیگر در سال ۱۳۶۰ و در فضای سرکوب پس از انفجار دفتر حزب جمهوری اسلامی در تهران، دستگیر شد و یک سال و نیم را در زندان گذراند.
-
-بهزادی پس از آزادی، در سال ۱۳۶۳، برابر با ۱۹۸۴ میلادی، ناچار از ایران گریخت و به پاکستان رفت. سپس راهی هلند شد و نزدیک به سه سال را در آن کشور با دشواری‌های پناهجویی، فشارهای مالی، تنهایی و بی‌ثباتی پشت سر گذاشت. سرانجام به سوئد آمد و در مدت کوتاهی پناهندگی سیاسی گرفت.
-
-زندگی در سوئد نیز برای او به آرامش نینجامید. فعالیت‌های سیاسی، بحران‌های خانوادگی و فشارهای روحی و اجتماعی، مسیر زندگی‌اش را به‌سوی فاجعه‌ای دردناک کشاند. او پس از ارتکاب جنایتی سنگین به زندان محکوم شد و هفت سال را در زندان گذراند. پس از پایان دوران زندان نیز به دلیل حکم اخراج و نبود مدارک هویتی، سال‌های طولانی را در وضعیتی بلاتکلیف و دشوار سپری کرد. با وجود همه‌ی این دشواری‌ها، بهزادی کوشید مسیر دیگری برای بازگشت به زندگی عادی پیدا کند. او به دانشگاه رفت و تحصیلات خود را تا مقطع فوق‌لیسانس در رشته‌ی جامعه‌شناسی ادامه داد؛ با این امید که شاید جامعه‌ی دموکراتیک سوئد، تلاش او برای بازسازی زندگی‌اش را ببیند و امکان عفو یا بازگشت به یک زندگی معمولی را برای او فراهم کند. اما این تلاش‌ها نیز بی‌نتیجه ماند. اکنون بیش از بیست‌وسه سال از پایان زندان گذشته است، اما او همچنان در وضعیت بلاتکلیفی زندگی می‌کند.
-
-کتاب «بر من چنین گذشت» روایت زندگی اوست؛ روایتی از کودکی در جنوب شرقی ایران، زندان و تبعید، گریز از کشور، پناهجویی در اروپا، فروپاشی، مجازات و سال‌های طولانی انتظار.
+        </p>
+        <p>
+          او نخستین بار در سال ۱۳۵۹، زمانی که هنوز دانش‌آموز دبیرستانی بود، بازداشت شد و شش ماه را در تبعید در شهر جهرمِ استان فارس گذراند. پس از بازگشت از تبعید، بار دیگر در سال ۱۳۶۰ و در فضای سرکوب پس از انفجار دفتر حزب جمهوری اسلامی در تهران، دستگیر شد و یک سال و نیم را در زندان گذراند.
+        </p>
+        <p>
+          بهزادی پس از آزادی، در سال ۱۳۶۳، برابر با ۱۹۸۴ میلادی، ناچار از ایران گریخت و به پاکستان رفت. سپس راهی هلند شد و نزدیک به سه سال را در آن کشور با دشواری‌های پناهجویی، فشارهای مالی، تنهایی و بی‌ثباتی پشت سر گذاشت. سرانجام به سوئد آمد و در مدت کوتاهی پناهندگی سیاسی گرفت.
+        </p>
+        <p>
+          زندگی در سوئد نیز برای او به آرامش نینجامید. فعالیت‌های سیاسی، بحران‌های خانوادگی و فشارهای روحی و اجتماعی، مسیر زندگی‌اش را به‌سوی فاجعه‌ای دردناک کشاند. او پس از ارتکاب جنایتی سنگین به زندان محکوم شد و هفت سال را در زندان گذراند.
+        </p>
+        <p>
+          پس از پایان دوران زندان نیز به دلیل حکم اخراج و نبود مدارک هویتی، سال‌های طولانی را در وضعیتی بلاتکلیف و دشوار سپری کرد. با وجود همه‌ی این دشواری‌ها، بهزادی کوشید مسیر دیگری برای بازگشت به زندگی عادی پیدا کند. او به دانشگاه رفت و تحصیلات خود را تا مقطع فوق‌لیسانس در رشته‌ی جامعه‌شناسی ادامه داد؛ با این امید که شاید جامعه‌ی دموکراتیک سوئد، تلاش او برای بازسازی زندگی‌اش را ببیند و امکان عفو یا بازگشت به یک زندگی معمولی را برای او فراهم کند. اما این تلاش‌ها نیز بی‌نتیجه ماند. اکنون بیش از بیست‌وسه سال از پایان زندان گذشته است، اما او همچنان در وضعیت بلاتکلیفی زندگی می‌کند.
+        </p>
+        <p>
+          کتاب «بر من چنین گذشت» روایت زندگی اوست؛ روایتی از کودکی در جنوب شرقی ایران، زندان و تبعید، گریز از کشور، پناهجویی در اروپا، فروپاشی، مجازات و سال‌های طولانی انتظار.
         </p>
       </section>
 
@@ -58,7 +405,7 @@
     </main>
 
     <footer>
-      © <span id="year"></span> بر من چنین گذشت. همه حقوق محفوظ است.
+      © <span id="year"></span> عباس بهزادی. همه حقوق محفوظ است.
     </footer>
   </div>
 
